@@ -5,6 +5,24 @@ This is just another implementation of Hellsgate + Halosgate/Tartarosgate.
 However, this implementation makes sure that **all system calls still go through ntdll.dll** to avoid the usage of direct systemcalls.
 To do so, I parse the ntdll for nonhooked syscall-stubs and re-use existing ```syscall;ret``` instructions - thus the name of this project.   
 
+```
+[*] Resolving Syscall: 916c6394
+        Found syscall using Halos gate
+        Found syscall; ret instruction
+        Syscall nr: 74
+        Gate: 00007FF9160100E2
+[*] Resolving Syscall: 625d5a2e
+        Found syscall using Halos gate
+        Found syscall; ret instruction
+        Syscall nr: 40
+        Gate: 00007FF91600FCA2
+[*] Resolving Syscall: 9523617c
+        Found syscall using Halos gate
+        Found syscall; ret instruction
+        Syscall nr: 69
+        Gate: 00007FF916010042
+```
+
 This probably bypasses some EDR trying to detect abnormal systemcalls.
 
 A sample program using **RecycledGate** can be found in the **sample** folder     
