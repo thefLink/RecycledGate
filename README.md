@@ -5,27 +5,33 @@ This is just another implementation of Hellsgate + Halosgate/Tartarosgate.
 However, this implementation makes sure that **all system calls still go through ntdll.dll** to avoid the usage of direct systemcalls.
 To do so, I parse the ntdll for nonhooked syscall-stubs and re-use existing ```syscall;ret``` instructions - thus the name of this project.   
 
+This probably bypasses some EDR trying to detect abnormal systemcalls.    
+I have verified the sample program in this repository against [syscall-detect](https://github.com/jackullrich/syscall-detect) by [@winternl_t](https://twitter.com/winternl_t) which uses the [HookingNirvana](https://github.com/ionescu007/HookingNirvana/blob/master/Esoteric%20Hooks.pdf) technique to detect abnormal systemcalls.
+
 ```
+.\Sample.exe HelloWorld.bin
+[SYSCALL-DETECT] Console logging started...
+[SYSCALL-DETECT] ntdll BaseAddress: 0x368508928
+[SYSCALL-DETECT] win32u BaseAddress: 0x0
 [*] Resolving Syscall: 916c6394
         Found syscall using Halos gate
         Found syscall; ret instruction
         Syscall nr: 74
         Gate: 00007FF9160100E2
-[*] Resolving Syscall: 625d5a2e
+[SNIP]
+[*] Resolving Syscall: 8a4e6274
         Found syscall using Halos gate
         Found syscall; ret instruction
-        Syscall nr: 40
-        Gate: 00007FF91600FCA2
-[*] Resolving Syscall: 9523617c
-        Found syscall using Halos gate
-        Found syscall; ret instruction
-        Syscall nr: 69
-        Gate: 00007FF916010042
+        Syscall nr: 188
+        Gate: 00007FF916010F12
+[*] Created section: 0x00000000000000B4
+[*] Mapped section locally: 0x000001B244E50000
+[*] Mapped section remote: 0x0000000000FE0000
+[*] NtQueueApcThread successfull
+[*] Resumed thread
 ```
 
-This probably bypasses some EDR trying to detect abnormal systemcalls.
-
-A sample program using **RecycledGate** can be found in the **sample** folder     
+The sample program can be found in the **sample** folder     
 
 ## Usage
 Here is a snippet, which should be self-explanatory.
@@ -54,3 +60,4 @@ if (!NT_SUCCESS(ntStatus)) {
 * Am0nsec and RtlMateusz for [Original Hellsgate implementation](https://github.com/am0nsec/HellsGate)
 * Boku7 for inspiration and his [Halosgate implementation](https://github.com/boku7/AsmHalosGate/)
 * Sektor7 for the amazing [windows evasion class](https://sektor7.net)
+* [@winternl_t](https://twitter.com/winternl_t) for the amazing [blogpost on detection of direct syscalls](https://winternl.com/detecting-manual-syscalls-from-user-mode/)
