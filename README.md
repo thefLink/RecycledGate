@@ -29,7 +29,7 @@ if (!NT_SUCCESS(ntStatus)) {
 ```
 **Note**:
 * No instructions must exist between the call to **PrepareSyscall** and **DoSyscall**
-* The hash algorithm used is djb2. All hashes must be encrypted with the key **0x41424344**. You can use the Hashgenerator.c file in the samples folder
+* The hash algorithm used is djb2. All hashes must be encrypted with the key **0x41424344**. You can use the Hashgenerator in this repository
 
 ## Credits
 
