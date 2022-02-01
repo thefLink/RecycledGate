@@ -3,10 +3,11 @@
 This is just another implementation of Hellsgate + Halosgate/Tartarosgate.    
 
 However, this implementation makes sure that **all system calls still go through ntdll.dll** to avoid the usage of direct systemcalls.
-To do so, I parse the ntdll for nonhooked syscall-stubs and re-use existing ```syscall;ret``` instructions - thus the name of this project.
+To do so, I parse the ntdll for nonhooked syscall-stubs and re-use existing ```syscall;ret``` instructions - thus the name of this project.   
+
+A sample program using **RecycledGate** usage can be found in the **sample** folder     
 
 ## Usage
-
 Here is a snippet, which should be self-explanatory.
 ```c
 Syscall sysNtCreateSection = { 0x00 };
