@@ -56,9 +56,8 @@ if (!NT_SUCCESS(ntStatus)) {
 * The hash algorithm used is djb2. All hashes must be encrypted with the key **0x41424344**. You can use the Hashgenerator in this repository
 
 ## Credits
-
-* [@Am0nsec](https://twitter.com/am0nsec?lang=en) and @RtlMateusz for [Original Hellsgate implementation](https://github.com/am0nsec/HellsGate)
-* [@0xBoku](https://twitter.com/0xBoku) for inspiration and his [Halosgate implementation](https://github.com/boku7/AsmHalosGate/)
-* [Sektor7](https://sektor7.net) for the documentation of [Halogate](https://blog.sektor7.net/#!res/2021/halosgate.md) on which this project is based
+* [Sektor7](https://sektor7.net) for inventing and documenting [Halosgate](https://blog.sektor7.net/#!res/2021/halosgate.md) on which this project is based
 * [Sektor7](https://sektor7.net) for the amazing [windows evasion class](https://institute.sektor7.net/view/courses/rto-win-evasion/)
+* [@Am0nsec](https://twitter.com/am0nsec?lang=en) and @RtlMateusz for the [original Hellsgate implementation](https://github.com/am0nsec/HellsGate)
+* [@0xBoku](https://twitter.com/0xBoku) for inspiration and his [Halosgate implementation](https://github.com/boku7/AsmHalosGate/)
 * [@winternl_t](https://twitter.com/winternl_t) for the amazing [blogpost on detection of direct syscalls](https://winternl.com/detecting-manual-syscalls-from-user-mode/)
