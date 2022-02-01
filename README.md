@@ -2,7 +2,7 @@
 
 This is just another implementation of Hellsgate + Halosgate/Tartarosgate.    
 
-However, this implementation makes sure that **all system calls still go through ntdll.dll** to avoid the usage of direct systemcalls.   
+However, this implementation makes sure that **all system calls still go through ntdll.dll** to avoid the usage of direct systemcalls.
 To do so, I parse the ntdll for nonhooked syscall-stubs and re-use existing ```syscall;ret``` instructions - thus the name of this project.   
 
 This probably bypasses some EDR trying to detect abnormal systemcalls.
