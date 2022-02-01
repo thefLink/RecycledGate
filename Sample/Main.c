@@ -11,9 +11,6 @@ extern DoSyscall();
 PVOID findNtDll(void);
 DWORD getSyscall(DWORD crypted_hash, Syscall* pSyscall);
 
-
-// https://github.com/Microwave89/createuserprocess/blob/master/createuserprocess/main.c
-
 int
 main(int argc, char** argv) {
 
