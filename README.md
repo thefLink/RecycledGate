@@ -1,6 +1,6 @@
 # RecycledGate
 
-This is just another implementation of Hellsgate + Halosgate/Tartarosgate.    
+This is just another implementation of Hellsgate + Halosgate/Tartarusgate.    
 
 However, this implementation makes sure that **all system calls still go through ntdll.dll** to avoid the usage of direct systemcalls.
 To do so, I parse the ntdll for nonhooked syscall-stubs and re-use existing ```syscall;ret``` instructions - thus the name of this project.   
@@ -60,4 +60,5 @@ if (!NT_SUCCESS(ntStatus)) {
 * [Sektor7](https://sektor7.net) for the amazing [windows evasion class](https://institute.sektor7.net/view/courses/rto-win-evasion/)
 * [@Am0nsec](https://twitter.com/am0nsec?lang=en) and @RtlMateusz for the [original Hellsgate implementation](https://github.com/am0nsec/HellsGate)
 * [@0xBoku](https://twitter.com/0xBoku) for inspiration and his [Halosgate implementation](https://github.com/boku7/AsmHalosGate/)
+* [@trickster012](https://twitter.com/trickster012) for the implementation of [Tartarusgate](https://github.com/trickster0/TartarusGate)
 * [@winternl_t](https://twitter.com/winternl_t) for the amazing [blogpost on detection of direct syscalls](https://winternl.com/detecting-manual-syscalls-from-user-mode/)
